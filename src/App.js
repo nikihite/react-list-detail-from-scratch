@@ -11,7 +11,7 @@ import DetailPage from './DetailPage';
 export default function App() {
   return (
     <Router>
-      <div>
+      <div className='App'>
 
         <Switch>
           <Route exact path="/">

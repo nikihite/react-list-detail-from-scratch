@@ -1,0 +1,36 @@
+.App {
+    background-color: rgba(173, 216, 230, 0.476);
+    height: 800px;
+}
+
+.movies-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie {
+    margin: 10px;
+    background-color: lightblue;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 180px;
+    height: 180px;
+    text-align: center;
+}
+
+.movie-detail {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1 {
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.movie-detail p {
+    font-size: 20px;
+}

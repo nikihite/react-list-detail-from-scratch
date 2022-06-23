@@ -1,36 +1,31 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { getMovies, getSingleMovie } from './services/fetch-utils';
+import { getMovies, getSingleMovie } from './services/fetch-utils.js';
 import MoviesList from './MoviesList';
 import Pagination from './Pagination';
+import { useParams } from 'react-router-dom';
 
 const PER_PAGE = 40;
 
 export default function ListPage() {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const [totalMovies, setTotalMovies] = useState(1);
 
   useEffect(() => {
     async function doFetch() {
       const from = currentPage * PER_PAGE;
       const to = ((currentPage + 1) * PER_PAGE) + 1;
-      const moviesAndCount = await getMovies(from, to);
-
-      setTotalMovies(moviesAndCount.count);
-      setMovies(moviesAndCount.data);
+      const data = await getMovies(from, to);
+      setMovies(data);
     }
     doFetch();
   }, [currentPage]);
-
-  const lastPage = Math.floor(totalMovies / PER_PAGE);
 
   return (
     <div>
       <Pagination
         currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        lastPage={lastPage} />
+        setCurrentPage={setCurrentPage} />
       <MoviesList movies={movies} />
     </div>
   );
