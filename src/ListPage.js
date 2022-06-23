@@ -3,7 +3,6 @@ import './App.css';
 import { getMovies, getSingleMovie } from './services/fetch-utils.js';
 import MoviesList from './MoviesList';
 import Pagination from './Pagination';
-import { useParams } from 'react-router-dom';
 
 const PER_PAGE = 40;
 
