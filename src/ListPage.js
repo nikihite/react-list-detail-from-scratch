@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { getMovies, getSingleMovie } from './services/fetch-utils.js';
+import { getMovies } from './services/fetch-utils.js';
 import MoviesList from './MoviesList';
 import Pagination from './Pagination';
 
